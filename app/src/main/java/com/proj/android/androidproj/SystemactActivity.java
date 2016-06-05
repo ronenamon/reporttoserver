@@ -1,5 +1,6 @@
 package com.proj.android.androidproj;
 
+import android.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,5 +26,12 @@ public class SystemactActivity extends AppCompatActivity {
     public void ShowReportList(View view) {
         Intent ViewReportIntent = new Intent(this,ViewReport.class); // Activity we get to go!
         startActivity(ViewReportIntent);
+    }
+
+    public void btnEvent1Click(View view) {
+        FragmentManager manager = getFragmentManager();
+        PopmenuClass popEvent1Instance = new PopmenuClass();
+        popEvent1Instance.show(manager,null);
+
     }
 }

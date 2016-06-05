@@ -57,7 +57,8 @@
                 android:id="@+id/textView2"
                 android:textColor="#ffffff"
                 android:singleLine="false"
-                android:textStyle="normal|bold" />
+                android:textStyle="normal|bold"
+                android:gravity="center" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -81,13 +82,14 @@
             android:weightSum="1">
 
             <TextView
-                android:layout_width="80dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="נייד"
                 android:id="@+id/textView3"
                 android:textStyle="normal|bold"
-                android:textColor="#ffffff" />
+                android:textColor="#ffffff"
+                android:gravity="center" />
 
             <EditText
                 android:layout_width="wrap_content"

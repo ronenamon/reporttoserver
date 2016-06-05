@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+     android:layoutDirection="locale">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="בחר איזור דיווח"
+        android:id="@+id/textTitle"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ff0000"
+        android:textSize="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="איזור"
+        android:id="@+id/textView6"
+        android:layout_marginTop="69dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/textTitle"
+        android:layout_toRightOf="@+id/edTextArea"
+        android:layout_toEndOf="@+id/edTextArea" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="אישור"
+        android:id="@+id/popOk"
+        android:layout_marginTop="62dp"
+        android:layout_alignRight="@+id/textTitle"
+        android:layout_alignEnd="@+id/textTitle"
+        android:layout_alignTop="@+id/textView6" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ביטול"
+        android:id="@+id/popCancel"
+        android:layout_alignTop="@+id/popOk"
+        android:layout_alignLeft="@+id/textTitle"
+        android:layout_alignStart="@+id/textTitle" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edTextArea"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignRight="@+id/textTitle"
+        android:layout_alignEnd="@+id/textTitle"
+        android:layout_alignLeft="@+id/popCancel"
+        android:layout_alignStart="@+id/popCancel" />
+
+</RelativeLayout>
