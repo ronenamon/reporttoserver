@@ -1,0 +1,10 @@
+<resources>
+    <string name="Main_title_name">ברוך הבא לדווח אירוע</string>
+    <string name="app_name">דווח אירוע</string>
+    <string name="report">דווח על אירוע </string>
+    <string name="Event1">שריפה</string>
+    <string name="Event2">מפגע בטיחותי</string>
+    <string name="Event3">חומרים מסוכנים</string>
+    <string name="Event4">אירוע חריג</string>
+    <string name="title_activity_list_of_report">הדיווחים שלי</string>
+</resources>

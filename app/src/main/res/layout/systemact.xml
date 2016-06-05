@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.proj.android.androidproj.SystemactActivity"
+    android:layoutDirection = "rtl"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:background="@drawable/back2">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="false">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout"
+            android:gravity="center_vertical|center_horizontal|right">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="שלום"
+                android:id="@+id/textView4"
+                android:textAlignment="textStart"
+                android:enabled="false"
+                android:textSize="28dp"
+                android:gravity="right"
+                android:textColor="#ffffff"
+                android:paddingStart="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/usernameTxt"
+                android:textSize="28dp"
+                android:textColor="#ffffff"
+                android:text="רונן"
+                android:paddingStart="15dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView5"
+                android:singleLine="false"
+                android:text="@string/report"
+                android:textSize="25dp"
+                android:gravity="right"
+                android:textStyle="normal|bold"
+                android:textAlignment="textStart"
+                android:textColor="#ffffff" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="55dp"
+                    android:text="@string/Event1"
+                    android:id="@+id/button6"
+                    android:background="@drawable/backgroundtitle"
+                    android:layout_column="1"
+                    android:layout_marginRight="0dp"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="55dp"
+                    android:text="@string/Event2"
+                    android:id="@+id/button7"
+                    android:background="@drawable/backgroundtitle"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="55dp"
+                    android:text="@string/Event3"
+                    android:id="@+id/btnEvent3"
+                    android:background="@drawable/backgroundtitle"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="55dp"
+                    android:text="@string/Event4"
+                    android:id="@+id/btnEvent4"
+                    android:background="@drawable/backgroundtitle"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="רשימת הדיווחים"
+                    android:id="@+id/btnShowList"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:onClick="ShowReportList" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:text="New Button"
+                    android:id="@+id/button3"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>
