@@ -46,6 +46,7 @@ public class ViewReport extends AppCompatActivity {
 
     TextView txtStatus;
     ArrayList<ListItem> Items;
+    ListView lsView;
     String status;
 
     @Override
@@ -78,24 +79,7 @@ public class ViewReport extends AppCompatActivity {
         String url = "http://www.dodev.info:8000/ronen/app/app.php";
         new AsyncTaskgetReports().execute(url);
 
-        //on click some items
-//        lsView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-//        {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                TextView txtName = (TextView) view.findViewById(R.id.textName);
-//                TextView txtDesc = (TextView) view.findViewById(R.id.textDesc);
-//
-//                // the data e want to send for the other activity
-//                Bundle bundWithData = new Bundle();
-//                bundWithData.putInt("position", position);
-//                bundWithData.putString("Name", txtName.getText().toString());
-//                bundWithData.putString("Desc", txtDesc.getText().toString());
-//                //PutExtra And Start The New Intent
-//                Toast.makeText(getApplicationContext(), txtName.getText() + "  ID : " + position, Toast.LENGTH_LONG).show();
-//            }
-//        });
+
 
     }//SOF
 
@@ -236,8 +220,28 @@ public class ViewReport extends AppCompatActivity {
             Log.d("After onPostExecute", txtStatus.getText().toString());
 
             MyCustomAdapter myadapter = new MyCustomAdapter(Items);
-            ListView lsView = (ListView) findViewById(R.id.listView);
+            lsView = (ListView) findViewById(R.id.listView);
             lsView.setAdapter(myadapter);
+
+            //on click some items
+            lsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    TextView txtName = (TextView) view.findViewById(R.id.textName);
+                    TextView txtDesc = (TextView) view.findViewById(R.id.textDesc);
+
+                    // the data e want to send for the other activity
+//                Bundle bundWithData = new Bundle();
+//                bundWithData.putInt("position", position);
+//                bundWithData.putString("Name", txtName.getText().toString());
+//                bundWithData.putString("Desc", txtDesc.getText().toString());
+
+
+                    //PutExtra And Start The New Intent
+                    Toast.makeText(getApplicationContext(), txtName.getText() + "  ID : " + position, Toast.LENGTH_LONG).show();
+                }
+            });
 
 
         }
