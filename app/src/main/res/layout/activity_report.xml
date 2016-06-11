@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.proj.android.androidproj.ReportActivity"
-    android:background="@drawable/back2">
+    android:background="#00b0e6">
 
     <LinearLayout
         android:orientation="vertical"
@@ -149,7 +149,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="צרף צילום"
+            android:text="מצלמה"
             android:id="@+id/btnCaptue"
             android:layout_gravity="center_horizontal"
             android:onClick="btnOpenCamera" />

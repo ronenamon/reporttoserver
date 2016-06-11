@@ -15,6 +15,7 @@ public class SystemactActivity extends AppCompatActivity {
     String ReporterName;
     String ReporterPhone;
     int areaSelected;
+    final CharSequence[] items = {"צפון", "חיפה", "מרכז", "דרום"};// setSingleChoiceItems
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,7 @@ public class SystemactActivity extends AppCompatActivity {
     }
 
     public void btnEvent1Click(View view) {
-        final CharSequence[] items = {"צפון", "חיפה", "מרכז", "דרום"};// setSingleChoiceItems
+
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.popUpArea)
@@ -178,7 +179,7 @@ public class SystemactActivity extends AppCompatActivity {
     public void GoWithData(int selecetedItemNumber, String name ,String phone)
     {
 
-        Intent OpenIntentToReport = new Intent(this,ReportActivity.class); // Activity we get to go!
+        Intent OpenIntentToReport = new Intent(getApplicationContext(),ReportActivity.class); // Activity we get to go!
         Bundle bund = new Bundle(); // the data we want to send for the other activity
 
         bund.putInt("AreaSelected", selecetedItemNumber);

@@ -9,13 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:layoutDirection = "rtl"
     tools:context="com.proj.android.androidproj.ViewReport"
-    android:background="@drawable/back2">
+    android:background="#72c4e5">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:id="@+id/ListOfReports">
 
         <TextView
             android:layout_width="wrap_content"
