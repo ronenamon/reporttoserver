@@ -46,7 +46,6 @@
                 android:id="@+id/usernameTxt"
                 android:textSize="28dp"
                 android:textColor="#ffffff"
-                android:text="רונן"
                 android:paddingStart="15dp" />
 
         </LinearLayout>
@@ -140,28 +139,32 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal">
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="55dp"
                     android:text="רשימת הדיווחים"
+                    android:background="@drawable/eventbuttongreen"
                     android:id="@+id/btnShowList"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="15dp"
-                    android:onClick="ShowReportList" />
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="0dp"
+                    android:onClick="ShowReportList"
+                    android:textSize="18dp" />
 
                 <Button
-                    android:layout_width="wrap_content"
+                    android:layout_width="150dp"
                     android:layout_height="55dp"
-                    android:text="New Button"
-                    android:id="@+id/button3"
-                    android:layout_marginTop="5dp"
+                    android:text="@string/rescue"
+                    android:id="@+id/btnRescue"
+                    android:layout_marginRight="10dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/eventbuttoncolor"
+                    android:textSize="18dp"
+                    android:onClick="popupList" />
             </LinearLayout>
 
         </LinearLayout>

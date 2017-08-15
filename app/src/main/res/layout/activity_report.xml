@@ -139,12 +139,13 @@
             android:id="@+id/editTextToReport"
             android:layout_gravity="center_horizontal|right"
             android:background="#e6e3e3"
-            android:text="כתוב כאן את פירוט הדיווח"
+
             android:textAlignment="textStart"
             android:textStyle="bold"
             android:singleLine="false"
             android:inputType="textMultiLine"
-            android:gravity="right" />
+            android:gravity="right"
+            android:hint="כתוב כאן את פירוט הדיווח" />
 
         <Button
             android:layout_width="wrap_content"

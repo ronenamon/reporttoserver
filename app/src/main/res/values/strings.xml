@@ -8,4 +8,5 @@
     <string name="Event4">אירוע חריג</string>
     <string name="title_activity_list_of_report">הדיווחים שלי</string>
     <string name="popUpArea">בחר איזור</string>
+    <string name="rescue">חילוץ</string>
 </resources>

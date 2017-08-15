@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         String phonenumberText = phonenumber.getText().toString(); // get the value password as is!
 
         //new String("").equals(usernameText)
-        Log.d("text",usernameText);
-        if(!(new String("").equals(usernameText)))
+        //Log.d("text",usernameText);
+        if(!(new String("").equals(usernameText)) && phonenumberText.length() >=8)
         {
             //title.setText(String.valueOf(usernameText)); // set the value
             Intent systemIntent = new Intent(this,SystemactActivity.class); // Activity we get to go!
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         }else{
             //title.setText(String.valueOf("Error")); // set the value
 
-            Toast.makeText(this,"הכנס ש  םוטלפון",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"הכנס שם ומספר טלפון תקין ",Toast.LENGTH_LONG).show();
         }
     }
 

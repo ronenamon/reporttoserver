@@ -71,7 +71,7 @@ public class ViewReport extends AppCompatActivity {
         setContentView(R.layout.activity_view_report);
         txtStatus = (TextView)findViewById(R.id.TxtStatus);
         context=this;
-        String url = "http://www.dodev.info:8000/ronen/app/app.php";
+        //String url = "http://www.dodev.info:8000/ronen/app/app.php";
         //new AsyncTaskgetReports().execute(url);
 
         ini();
@@ -79,14 +79,11 @@ public class ViewReport extends AppCompatActivity {
     }//SOF
 
     private void ini() {
-       // Intent intent = getIntent();
-        Items =new ArrayList<ListItem>();//init
-       // ArrayList list = (ArrayList)intent.getSerializableExtra("ArrayList");
-        ArrayList list;
 
+        Items =new ArrayList<ListItem>();//init
+        ArrayList list;
         db = new DBConnections(this,DBname,null,Version);
         list = db.getAllData();
-
         if(list!=null && list.size()>0)
         {
             ListItem TempItem;
@@ -170,143 +167,6 @@ public class ViewReport extends AppCompatActivity {
         }
     }//SOF
 
-
-    public class AsyncTaskgetReports extends AsyncTask<String, String, String> {
-
-        @Override
-        protected void onPreExecute(){
-            Items =new ArrayList<ListItem>();//init
-
-            status = "מצב";//reset
-
-           // MyCustomAdapter myadapter = new MyCustomAdapter(Items);
-            // connect ListView
-            //ListView lsView = (ListView) findViewById(R.id.listView);
-            // inject The Adapter To The Object myadapter
-            //lsView.setAdapter(myadapter);
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-
-            publishProgress("open connection" );
-            Log.d("open connection", "ok");
-            try
-            {
-                URL url = new URL(params[0]);
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                publishProgress("start  read buffer" );
-                status=Stream2String(in);
-                Log.d("statusAfterStrem2String", status);
-
-                ////////////
-                JSONArray jsonArray = null;
-                try {
-                    jsonArray = new JSONArray(status);
-                    Log.d("length",String.valueOf(jsonArray.length()));
-                    JSONObject object;
-                    JSONArray array;
-
-                    //cources college;
-                    ListItem TempItem;
-
-                    //collegeList = new ArrayList<cources>();
-
-                    // Fill The Array Of Items
-                    for(int i=0; i<jsonArray.length(); i++)
-                    {
-
-                        object = jsonArray.getJSONObject(i);//get the current object
-                        // ListItem(int id,String Name,String Phone,String Area,String img_src,String img_name,String Desc)
-                        //init the value
-                        TempItem = new ListItem(object.getInt("id"),
-                                                object.getString("name"),
-                                                object.getString("phone"),
-                                                object.getString("area"),
-                                                object.getString("img_src"),
-                                                object.getString("img_name"),
-                                                object.getString("desc_report"));
-                        Items.add(TempItem);//the temporery item
-                    }
-
-                }catch (JSONException e ){
-                  e.printStackTrace();
-                }
-
-                /////////////
-                in.close();
-
-
-            } catch (Exception e) {
-                publishProgress("cannot connect to server");
-            }
-
-            return null;
-        }
-
-        protected void onProgressUpdate(String... progress) {
-
-            try {
-                Log.d("txtStatus", txtStatus.getText().toString());
-                txtStatus.setText(progress[0]);
-
-
-
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-
-        }
-
-        @Override
-        protected void onPostExecute(String  result2){
-
-
-            Log.d("onPostExecute", "OK");
-           // txtStatus.setText(status);
-            Log.d("After onPostExecute", txtStatus.getText().toString());
-
-            MyCustomAdapter myadapter = new MyCustomAdapter(Items);
-            lsView = (ListView) findViewById(R.id.listView);
-            lsView.setAdapter(myadapter);
-
-            //on click some items
-            lsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    TextView txtName = (TextView) view.findViewById(R.id.textName);
-                    TextView txtDesc = (TextView) view.findViewById(R.id.textDesc);
-                    Toast.makeText(getApplicationContext(), txtName.getText() + "  ID : " + position, Toast.LENGTH_LONG).show();
-                }
-            });
-        }
-
-        public String Stream2String(InputStream inputStream) {
-            BufferedReader bureader=new BufferedReader( new InputStreamReader(inputStream));
-            String line ;
-            String Text="";
-            try{
-                while((line=bureader.readLine())!=null) {
-                    Text+=line;
-                }
-                inputStream.close();
-            }catch (Exception ex){}
-            return Text;
-        }
-    }//SOF
-
-    public void getImagePath(){
-        ///storage/emulated/0/Pictures/1465651317879.jpg
-        ///sdcard/Images/test_image.jpg
-        File imgFile = new File("storage/emulated/0/Pictures/1465651317879.jpg");
-        if(imgFile.exists()){
-            Log.d("file exist!",imgFile.getAbsolutePath());
-            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-           img.setImageBitmap(myBitmap);
-        }
-    }
 }
 
 

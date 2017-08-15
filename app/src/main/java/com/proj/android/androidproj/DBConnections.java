@@ -10,9 +10,6 @@ import android.util.Log;
 import java.security.PublicKey;
 import java.util.ArrayList;
 
-/**
- * Created by ronen_000 on 11/06/2016.
- */
 public class DBConnections extends SQLiteOpenHelper  {
 
     public DBConnections(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

@@ -49,7 +49,7 @@ public class ReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
-        Disable.setEnabled(true);
+       // Disable.setEnabled(true);
 
          db = new DBConnections(this,DBname,null,Version);
 
@@ -165,7 +165,7 @@ public class ReportActivity extends AppCompatActivity {
                 // OK to do
                // GO();
                 dialog.dismiss();
-                Disable.setEnabled(false);
+                //Disable.setEnabled(false);
                 GO();
 
             }
@@ -181,6 +181,7 @@ public class ReportActivity extends AppCompatActivity {
             startActivity(intent);
         }
     public void btnCancelClick(View view) {
+        finish();
     }
 
 
