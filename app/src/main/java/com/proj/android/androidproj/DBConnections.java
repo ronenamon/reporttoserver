@@ -27,7 +27,11 @@ public class DBConnections extends SQLiteOpenHelper  {
     public void insertRowReports(String name,String phone,String img_src){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        //new line
 
+
+
+        
         //contentValues.put("id",id);
         contentValues.put("name",name);
         contentValues.put("phone",phone);
